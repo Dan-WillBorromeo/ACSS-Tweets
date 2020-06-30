@@ -1,9 +1,18 @@
-var tweets = JSON.parse(data);
+var data = {
+    "tweets": [{
+        "created_at": "string",
+        "id": 100,
+        "text": "string",
+        "entities": {}
+    }]
+}
+var posts = JSON.parse(data);
+var DBparameters = JSON.stringify(posts);
 var words = "";
 var item;
 
-for (item in tweets) {
-    words += "<tr><td>" + tweets[item].created_at + "<br>" + tweets[item].id + "<br>" + tweets[item].text + "<br>" + tweets[item].entities + "</td></tr>";
+for (item in posts) {
+    words += "<tr><td>" + posts[item].created_at + "<br>" + posts[item].id + "<br>" + posts[item].text + "<br>" + posts[item].entities + "</td></tr>";
 }
 
 document.getElementById("placeHolder").innerHTML = words;
